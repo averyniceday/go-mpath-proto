@@ -4,7 +4,7 @@
 // 	protoc        v3.21.1
 // source: mpath.proto
 
-package mpath-api
+package mpathapi
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
