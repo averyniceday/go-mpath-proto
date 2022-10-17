@@ -1,7 +1,7 @@
 syntax = "proto3";
 import "google/protobuf/any.proto";
 
-option go_package = "angelaw7/msk-protobuf";
+option go_package = "github.com/averyniceday/go-mpath-proto/mpath-api";
 
 message FetchJSON {
     uint32 sampleCount = 1 [json_name = "sample-count"];
