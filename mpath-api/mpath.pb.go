@@ -26,7 +26,7 @@ type FetchJSON struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SampleCount uint32    `protobuf:"varint,1,opt,name=sampleCount,json=sample-count,proto3" json:"sampleCount,omitempty"`
+	SampleCount uint32    `protobuf:"varint,1,opt,name=sampleCount,json=sample-count,proto3" json:"sample-count,omitempty"`
 	Results     []*Result `protobuf:"bytes,2,rep,name=results,proto3" json:"results,omitempty"`
 	Disclaimer  string    `protobuf:"bytes,3,opt,name=disclaimer,proto3" json:"disclaimer,omitempty"`
 }
