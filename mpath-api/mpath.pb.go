@@ -200,4 +200,4 @@ type SvVariants struct {
 	Confidence_class        string `json:"confidence_class"`
 	Oncokb_interpretation   string `json:"oncokb_interpretation"`
 	Sv_length               int    `json:"sv_length"`
-}g
+}
