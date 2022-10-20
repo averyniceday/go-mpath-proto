@@ -2,7 +2,7 @@ package mpathapi
 
 type FetchJSON struct {
 	SampleCount int `json:"sample-count"`
-	Results     []Result
+	Results     map[string]Result `json:"results"`
 	Disclaimer  string `json:"disclaimer"`
 }
 
