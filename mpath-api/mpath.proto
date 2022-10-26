@@ -5,7 +5,7 @@ option go_package = "github.com/averyniceday/go-mpath-proto/mpath-api";
 
 message FetchJSON {
     uint32 sampleCount = 1 [json_name = "sample-count"];
-    map<String, Result> results = 2 [json_name = "results"];
+    map<string, Result> results = 2 [json_name = "results"];
     string disclaimer = 3;
 }
 
