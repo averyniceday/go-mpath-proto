@@ -5,7 +5,7 @@ option go_package = "github.com/averyniceday/go-mpath-proto/mpath-api";
 
 message FetchJSON {
     uint32 sampleCount = 1 [json_name = "sample-count"];
-    repeated Result results = 2;
+    map<String, Result> results = 2 [json_name = "results"];
     string disclaimer = 3;
 }
 
@@ -17,8 +17,7 @@ message Result {
     repeated Snp snp_indel_exonic = 5 [json_name = "snp-indel-exonic"];
     repeated CnvIntragenicVariants cnv_intragenic_variants = 6 [json_name = "cnv-intragenic-variants"]; 
     repeated SvVariants sv_variants = 7 [json_name = "sv-variants"];
-    repeated Snp snp_indel_exonic_np = 8 [json_name = "snp-indel-exonic-np"];
-    
+    repeated Snp snp_indel_exonic_np = 8 [json_name = "snp-indel-exonic-np"];    
 }
 
 message Snp {
