@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option go_package = "github.com/averyniceday/go-mpath-proto/testapi";
+
+message FetchJSON {
+    uint32 sampleCount = 1 [json_name = "sample-count"];
+    string disclaimer = 2;
+}
