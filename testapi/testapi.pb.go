@@ -25,7 +25,7 @@ type FetchJSON struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SampleCount uint32             `protobuf:"varint,1,opt,name=sampleCount,json=sample-count,proto3" json:"sampleCount,omitempty"`
+	SampleCount uint32             `protobuf:"varint,1,opt,name=sampleCount,json=sample-count,proto3" json:"sample-count,omitempty"`
 	Disclaimer  string             `protobuf:"bytes,2,opt,name=disclaimer,proto3" json:"disclaimer,omitempty"`
 	Results     map[string]*Result `protobuf:"bytes,3,rep,name=results,proto3" json:"results,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
@@ -88,7 +88,7 @@ type Result struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Metadata *Metadata `protobuf:"bytes,1,opt,name=metadata,json=meta-data,proto3" json:"metadata,omitempty"`
+	Metadata *Metadata `protobuf:"bytes,1,opt,name=metadata,json=meta-data,proto3" json:"meta-data,omitempty"`
 }
 
 func (x *Result) Reset() {
