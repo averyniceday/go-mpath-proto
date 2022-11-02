@@ -5,4 +5,13 @@ option go_package = "github.com/averyniceday/go-mpath-proto/testapi";
 message FetchJSON {
     uint32 sampleCount = 1 [json_name = "sample-count"];
     string disclaimer = 2;
+    map<string, Result> results = 3 [json_name = "results"];
 }
+
+message Result {
+    Metadata metadata = 1 [json_name = "meta-data"];
+}
+
+message Metadata {
+    string dmp_sample_id = 1;
+}	
