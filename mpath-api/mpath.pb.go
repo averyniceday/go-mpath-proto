@@ -26,7 +26,7 @@ type FetchJSON struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SampleCount uint32             `protobuf:"varint,1,opt,name=sampleCount,json=sample-count,proto3" json:"sampleCount,omitempty"`
+	SampleCount uint32             `protobuf:"varint,1,opt,name=sampleCount,json=sample-count,proto3" json:"sample-count,omitempty"`
 	Results     map[string]*Result `protobuf:"bytes,2,rep,name=results,proto3" json:"results,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	Disclaimer  string             `protobuf:"bytes,3,opt,name=disclaimer,proto3" json:"disclaimer,omitempty"`
 }
@@ -92,7 +92,7 @@ type Result struct {
 	SnpIndelSilentNp      []*Snp                   `protobuf:"bytes,1,rep,name=snp_indel_silent_np,json=snp-indel-silent-np,proto3" json:"snp_indel_silent_np,omitempty"`
 	CnvVariants           []*CnvVariants           `protobuf:"bytes,2,rep,name=cnv_variants,json=cnv-variants,proto3" json:"cnv_variants,omitempty"`
 	SnpIndelSilent        []*Snp                   `protobuf:"bytes,3,rep,name=snp_indel_silent,json=snp-indel-silent,proto3" json:"snp_indel_silent,omitempty"`
-	MetaData              *MetaData                `protobuf:"bytes,4,opt,name=meta_data,json=meta-data,proto3" json:"meta_data,omitempty"`
+	MetaData              *MetaData                `protobuf:"bytes,4,opt,name=meta_data,json=meta-data,proto3" json:"meta-data,omitempty"`
 	SnpIndelExonic        []*Snp                   `protobuf:"bytes,5,rep,name=snp_indel_exonic,json=snp-indel-exonic,proto3" json:"snp_indel_exonic,omitempty"`
 	CnvIntragenicVariants []*CnvIntragenicVariants `protobuf:"bytes,6,rep,name=cnv_intragenic_variants,json=cnv-intragenic-variants,proto3" json:"cnv_intragenic_variants,omitempty"`
 	SvVariants            []*SvVariants            `protobuf:"bytes,7,rep,name=sv_variants,json=sv-variants,proto3" json:"sv_variants,omitempty"`
