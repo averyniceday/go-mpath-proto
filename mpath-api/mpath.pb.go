@@ -26,7 +26,7 @@ type FetchJSON struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SampleCount uint32             `protobuf:"varint,1,opt,name=sampleCount,json=sample-count,proto3" json:"sample-count,omitempty"`
+	SampleCount uint32             `protobuf:"varint,1,opt,name=sampleCount,json=sample-count,proto3" json:"sampleCount,omitempty"`
 	Results     map[string]*Result `protobuf:"bytes,2,rep,name=results,proto3" json:"results,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	Disclaimer  string             `protobuf:"bytes,3,opt,name=disclaimer,proto3" json:"disclaimer,omitempty"`
 }
@@ -92,7 +92,7 @@ type Result struct {
 	SnpIndelSilentNp      []*Snp                   `protobuf:"bytes,1,rep,name=snp_indel_silent_np,json=snp-indel-silent-np,proto3" json:"snp_indel_silent_np,omitempty"`
 	CnvVariants           []*CnvVariants           `protobuf:"bytes,2,rep,name=cnv_variants,json=cnv-variants,proto3" json:"cnv_variants,omitempty"`
 	SnpIndelSilent        []*Snp                   `protobuf:"bytes,3,rep,name=snp_indel_silent,json=snp-indel-silent,proto3" json:"snp_indel_silent,omitempty"`
-	MetaData              *MetaData                `protobuf:"bytes,4,opt,name=meta_data,json=meta-data,proto3" json:"meta-data,omitempty"`
+	MetaData              *MetaData                `protobuf:"bytes,4,opt,name=meta_data,json=meta-data,proto3" json:"meta_data,omitempty"`
 	SnpIndelExonic        []*Snp                   `protobuf:"bytes,5,rep,name=snp_indel_exonic,json=snp-indel-exonic,proto3" json:"snp_indel_exonic,omitempty"`
 	CnvIntragenicVariants []*CnvIntragenicVariants `protobuf:"bytes,6,rep,name=cnv_intragenic_variants,json=cnv-intragenic-variants,proto3" json:"cnv_intragenic_variants,omitempty"`
 	SvVariants            []*SvVariants            `protobuf:"bytes,7,rep,name=sv_variants,json=sv-variants,proto3" json:"sv_variants,omitempty"`
@@ -924,7 +924,7 @@ type MetaData struct {
 	MetastasisSite      string  `protobuf:"bytes,4,opt,name=metastasis_site,json=metastasisSite,proto3" json:"metastasis_site,omitempty"`
 	TmbCohortPercentile float64 `protobuf:"fixed64,5,opt,name=tmb_cohort_percentile,json=tmbCohortPercentile,proto3" json:"tmb_cohort_percentile,omitempty"`
 	MrevStatusName      string  `protobuf:"bytes,6,opt,name=mrev_status_name,json=mrevStatusName,proto3" json:"mrev_status_name,omitempty"`
-	MsiScore            string  `protobuf:"bytes,7,opt,name=msi_score,json=msi-score,proto3" json:"msi_score,omitempty"`
+	MsiScore            uint32  `protobuf:"varint,7,opt,name=msi_score,json=msi-score,proto3" json:"msi_score,omitempty"`
 	SlideViewerId       string  `protobuf:"bytes,8,opt,name=slide_viewer_id,json=slide-viewer-id,proto3" json:"slide_viewer_id,omitempty"`
 	GenePanel           string  `protobuf:"bytes,9,opt,name=gene_panel,json=gene-panel,proto3" json:"gene_panel,omitempty"`
 	DmpPatientId        string  `protobuf:"bytes,10,opt,name=dmp_patient_id,json=dmpPatientId,proto3" json:"dmp_patient_id,omitempty"`
@@ -1034,11 +1034,11 @@ func (x *MetaData) GetMrevStatusName() string {
 	return ""
 }
 
-func (x *MetaData) GetMsiScore() string {
+func (x *MetaData) GetMsiScore() uint32 {
 	if x != nil {
 		return x.MsiScore
 	}
-	return ""
+	return 0
 }
 
 func (x *MetaData) GetSlideViewerId() string {
@@ -1993,7 +1993,7 @@ var file_mpath_proto_rawDesc = []byte{
 	0x74, 0x61, 0x74, 0x75, 0x73, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x0e, 0x6d, 0x72, 0x65, 0x76, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x4e, 0x61, 0x6d, 0x65,
 	0x12, 0x1c, 0x0a, 0x09, 0x6d, 0x73, 0x69, 0x5f, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x18, 0x07, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x09, 0x6d, 0x73, 0x69, 0x2d, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x12, 0x28,
+	0x01, 0x28, 0x0d, 0x52, 0x09, 0x6d, 0x73, 0x69, 0x2d, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x12, 0x28,
 	0x0a, 0x0f, 0x73, 0x6c, 0x69, 0x64, 0x65, 0x5f, 0x76, 0x69, 0x65, 0x77, 0x65, 0x72, 0x5f, 0x69,
 	0x64, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x73, 0x6c, 0x69, 0x64, 0x65, 0x2d, 0x76,
 	0x69, 0x65, 0x77, 0x65, 0x72, 0x2d, 0x69, 0x64, 0x12, 0x1e, 0x0a, 0x0a, 0x67, 0x65, 0x6e, 0x65,

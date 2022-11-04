@@ -114,7 +114,7 @@ message MetaData {
     string metastasis_site = 4;
     double tmb_cohort_percentile = 5;
     string mrev_status_name = 6;
-    string msi_score = 7 [json_name = "msi-score"];
+    uint32 msi_score = 7 [json_name = "msi-score"];
     string slide_viewer_id = 8 [json_name = "slide-viewer-id"];
     string gene_panel = 9 [json_name = "gene-panel"];
     string dmp_patient_id = 10;
