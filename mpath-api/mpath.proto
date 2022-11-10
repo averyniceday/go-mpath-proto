@@ -3,7 +3,14 @@ import "google/protobuf/any.proto";
 
 option go_package = "github.com/averyniceday/go-mpath-proto/mpath-api";
 
-message FetchJSON {
+message MPathSegData {
+    string alys2samples_id = 1;
+    string disclaimer = 2;
+    string dmp_sample_id = 3;
+    repeated google.protobuf.Any seg_data = 4 [json_name = "seg-data"];
+}
+
+message MPathVariantData {
     uint32 sample_count = 1 [json_name = "sample-count"];
     map<string, Result> results = 2 [json_name = "results"];
     string disclaimer = 3;
