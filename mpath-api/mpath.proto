@@ -1,14 +1,20 @@
 syntax = "proto3";
 import "google/protobuf/any.proto";
-import "google/protobuf/struct.proto";
-
 option go_package = "github.com/averyniceday/go-mpath-proto/mpath-api";
 
 message MPathSegData {
     string alys2samples_id = 1;
     string disclaimer = 2;
     string dmp_sample_id = 3;
-    repeated google.protobuf.ListValue seg_data = 4 [json_name = "seg-data"];
+    repeated SegData seg_data = 4;
+}
+
+message SegData {
+    string chromosome = 1;
+    string locus_start = 2;
+    string locus_end = 3;
+    string num_mark = 4;
+    string seg_mean = 5;
 }
 
 message MPathVariantData {
