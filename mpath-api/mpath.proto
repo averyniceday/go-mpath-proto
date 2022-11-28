@@ -21,6 +21,7 @@ message MPathVariantData {
     uint32 sample_count = 1 [json_name = "sample-count"];
     map<string, Result> results = 2 [json_name = "results"];
     string disclaimer = 3;
+    repeated SegData seg_data = 4;
 }
 
 message Result {
