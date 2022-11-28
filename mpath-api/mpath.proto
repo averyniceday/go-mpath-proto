@@ -21,7 +21,6 @@ message MPathVariantData {
     uint32 sample_count = 1 [json_name = "sample-count"];
     map<string, Result> results = 2 [json_name = "results"];
     string disclaimer = 3;
-    MPathSegData seg_data = 4;
 }
 
 message Result {
@@ -33,6 +32,7 @@ message Result {
     repeated CnvIntragenicVariants cnv_intragenic_variants = 6 [json_name = "cnv-intragenic-variants"];
     repeated SvVariants sv_variants = 7 [json_name = "sv-variants"];
     repeated Snp snp_indel_exonic_np = 8 [json_name = "snp-indel-exonic-np"];
+    MPathSegData mpath_seg_data = 9 [json_name = "mpath-seg-data"]; 
 }
 
 message Snp {
