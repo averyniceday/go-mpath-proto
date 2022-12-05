@@ -116,7 +116,7 @@ message CnvVariants {
     string oncokb_interpretation = 19;
     uint32 oncokb_reported = 20;
     string oncokb_ver = 21;
-    google.protobuf.Any rlevel = 22;
+    string rlevel = 22;
     string treatments = 23;
     uint32 variant_status_cv_id = 24;
     string variant_status_name = 25;
@@ -173,13 +173,13 @@ message CnvIntragenicVariants {
     string cytoband = 5;
     string gene_id = 6;
     string level = 7;
-    google.protobuf.Any oncogenic = 8;
-    google.protobuf.Any oncokb_interpretation = 9;
+    string oncogenic = 8;
+    string oncokb_interpretation = 9;
     uint32 oncokb_reported = 10;
-    google.protobuf.Any oncokb_ver = 11;
+    string oncokb_ver = 11;
     string refseq_acc = 12;
-    google.protobuf.Any rlevel = 13;
-    google.protobuf.Any treatments = 14;
+    string rlevel = 13;
+    string treatments = 14;
     uint32 variant_status_cv_id = 15;
 }
 
@@ -199,7 +199,7 @@ message SvVariants {
     string oncokb_interpretation = 13;
     uint32 oncokb_reported = 14;
     uint32 paired_end_read_support = 15;
-    google.protobuf.Any rlevel = 16;
+    string rlevel = 16;
     string site1_chrom = 17;
     string site1_desc = 18;
     string site1_gene = 19;
