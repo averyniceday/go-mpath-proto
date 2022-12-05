@@ -172,7 +172,7 @@ message CnvIntragenicVariants {
     uint32 confidence_cv_id = 4;
     string cytoband = 5;
     string gene_id = 6;
-    google.protobuf.Any level = 7;
+    string level = 7;
     google.protobuf.Any oncogenic = 8;
     google.protobuf.Any oncokb_interpretation = 9;
     uint32 oncokb_reported = 10;
