@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+option go_package = "github.com/averyniceday/go-mpath-proto/mpath-api";
+
+message MPathGmlVariantData {
+    uint32 sample_count = 1 [json_name = "sample-count"];
+    map<string, ResultGml> results = 2 [json_name = "results"];
+    string disclaimer = 3;
+}
+
+message ResultGml {
+    repeated CnvIntragenicVariantsGml cnv_intragenic_variants_gml = 1 [json_name = "cnv-intragenic-variants-gml"];
+    repeated CnvVariantsGml cnv_variants_gml = 2 [json_name = "cnv-variants-gml"];
+    MetaDataGml meta_data = 3 [json_name = "meta-data"];
+    repeated SnpIndelGml snp_indel_gml = 4 [json_name = "snp-indel-gml"];
+}
+
+message CnvIntragenicVariantsGml {
+    string chromosome = 1;
+    string clinical_signed_out = 2 [json_name = "clinical-signed-out"];
+    string cluster = 3;
+    string cnv_class_name = 4;
+    string cytoband = 5;
+    string gene_id = 6;
+    string interpretation = 7;
+}
+
+message CnvVariantsGml {
+    string chromosome = 1;
+    string clinical_signed_out = 2 [json_name = "clinical-signed-out"];
+    string cnv_class_name = 3;
+    string cytoband = 4;
+    double gene_fold_change = 5;
+    string gene_id = 6;
+    double gene_p_value = 7;
+    string interpretation = 8;
+    string panel_name = 9;
+    string path_score = 10;
+}
+
+message SnpIndelGml {
+    string aa_change = 1;
+    string acmg_criteria = 2;
+    uint32 allele_depth = 3;
+    string alt_allele = 4;
+    string cDNA_change = 5;
+    string chromosome = 6;
+    string clinical_signed_out = 7 [json_name = "clinical-signed-out"];
+    string clinvar = 8;
+    string dbSNP_id = 9;
+    uint32 depth = 10;
+    string exon_num = 11;
+    string gene_id = 12;
+    string interpretation = 13;
+    string mafreq_1000g = 14;
+    string panel_name = 15;
+    string path_score = 16;
+    string ref_allele = 17;
+    uint32 start_position = 18;
+    string transcript_id = 19;
+    double variant_freq = 20;
+}
+
+message MetaDataGml {
+    string alys2sample_id = 1;
+    string dmp_alys_task_name = 2;
+    string dmp_patient_id = 3;
+    string dmp_sample_id = 4;
+    uint32 gender = 5;
+    string gene_panel = 6 [json_name = "gene-panel"];
+    string legacy_patient_id = 7;
+    string legacy_sample_id = 8;
+    uint32 retrieve_status = 9;
+    uint32 sample_coverage = 10;
+    string so_comments = 11;
+    string so_status_name = 12;
+}
