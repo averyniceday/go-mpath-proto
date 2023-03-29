@@ -1,236 +1,314 @@
-# Clinvar
+# ClinVar
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AlternateAllele** | Pointer to **string** |  | [optional] 
-**Chromosome** | Pointer to **string** |  | [optional] 
-**ClinicalSignificance** | Pointer to **string** |  | [optional] 
-**ClinvarId** | Pointer to **int32** |  | [optional] 
-**ConflictingClinicalSignificance** | Pointer to **string** |  | [optional] 
-**EndPosition** | Pointer to **int32** |  | [optional] 
-**ReferenceAllele** | Pointer to **string** |  | [optional] 
-**StartPosition** | Pointer to **int32** |  | [optional] 
+**AlleleId** | Pointer to **int32** | allele_id | [optional] 
+**Alt** | Pointer to **string** | alt | [optional] 
+**Chrom** | Pointer to **string** | chrom | [optional] 
+**Cytogenic** | Pointer to **string** | cytogenic | [optional] 
+**Gene** | Pointer to [**Gene**](Gene.md) |  | [optional] 
+**Hg19** | Pointer to [**Hg19**](Hg19.md) |  | [optional] 
+**Hg38** | Pointer to [**Hg38**](Hg38.md) |  | [optional] 
+**Hgvs** | Pointer to [**Hgvs**](Hgvs.md) |  | [optional] 
+**License** | Pointer to **string** | license | [optional] 
+**Rcv** | Pointer to [**[]Rcv**](Rcv.md) |  | [optional] 
+**VariantId** | Pointer to **int32** | variant_id | [optional] 
 
 ## Methods
 
-### NewClinvar
+### NewClinVar
 
-`func NewClinvar() *Clinvar`
+`func NewClinVar() *ClinVar`
 
-NewClinvar instantiates a new Clinvar object
+NewClinVar instantiates a new ClinVar object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewClinvarWithDefaults
+### NewClinVarWithDefaults
 
-`func NewClinvarWithDefaults() *Clinvar`
+`func NewClinVarWithDefaults() *ClinVar`
 
-NewClinvarWithDefaults instantiates a new Clinvar object
+NewClinVarWithDefaults instantiates a new ClinVar object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAlternateAllele
+### GetAlleleId
 
-`func (o *Clinvar) GetAlternateAllele() string`
+`func (o *ClinVar) GetAlleleId() int32`
 
-GetAlternateAllele returns the AlternateAllele field if non-nil, zero value otherwise.
+GetAlleleId returns the AlleleId field if non-nil, zero value otherwise.
 
-### GetAlternateAlleleOk
+### GetAlleleIdOk
 
-`func (o *Clinvar) GetAlternateAlleleOk() (*string, bool)`
+`func (o *ClinVar) GetAlleleIdOk() (*int32, bool)`
 
-GetAlternateAlleleOk returns a tuple with the AlternateAllele field if it's non-nil, zero value otherwise
+GetAlleleIdOk returns a tuple with the AlleleId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAlternateAllele
+### SetAlleleId
 
-`func (o *Clinvar) SetAlternateAllele(v string)`
+`func (o *ClinVar) SetAlleleId(v int32)`
 
-SetAlternateAllele sets AlternateAllele field to given value.
+SetAlleleId sets AlleleId field to given value.
 
-### HasAlternateAllele
+### HasAlleleId
 
-`func (o *Clinvar) HasAlternateAllele() bool`
+`func (o *ClinVar) HasAlleleId() bool`
 
-HasAlternateAllele returns a boolean if a field has been set.
+HasAlleleId returns a boolean if a field has been set.
 
-### GetChromosome
+### GetAlt
 
-`func (o *Clinvar) GetChromosome() string`
+`func (o *ClinVar) GetAlt() string`
 
-GetChromosome returns the Chromosome field if non-nil, zero value otherwise.
+GetAlt returns the Alt field if non-nil, zero value otherwise.
 
-### GetChromosomeOk
+### GetAltOk
 
-`func (o *Clinvar) GetChromosomeOk() (*string, bool)`
+`func (o *ClinVar) GetAltOk() (*string, bool)`
 
-GetChromosomeOk returns a tuple with the Chromosome field if it's non-nil, zero value otherwise
+GetAltOk returns a tuple with the Alt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetChromosome
+### SetAlt
 
-`func (o *Clinvar) SetChromosome(v string)`
+`func (o *ClinVar) SetAlt(v string)`
 
-SetChromosome sets Chromosome field to given value.
+SetAlt sets Alt field to given value.
 
-### HasChromosome
+### HasAlt
 
-`func (o *Clinvar) HasChromosome() bool`
+`func (o *ClinVar) HasAlt() bool`
 
-HasChromosome returns a boolean if a field has been set.
+HasAlt returns a boolean if a field has been set.
 
-### GetClinicalSignificance
+### GetChrom
 
-`func (o *Clinvar) GetClinicalSignificance() string`
+`func (o *ClinVar) GetChrom() string`
 
-GetClinicalSignificance returns the ClinicalSignificance field if non-nil, zero value otherwise.
+GetChrom returns the Chrom field if non-nil, zero value otherwise.
 
-### GetClinicalSignificanceOk
+### GetChromOk
 
-`func (o *Clinvar) GetClinicalSignificanceOk() (*string, bool)`
+`func (o *ClinVar) GetChromOk() (*string, bool)`
 
-GetClinicalSignificanceOk returns a tuple with the ClinicalSignificance field if it's non-nil, zero value otherwise
+GetChromOk returns a tuple with the Chrom field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetClinicalSignificance
+### SetChrom
 
-`func (o *Clinvar) SetClinicalSignificance(v string)`
+`func (o *ClinVar) SetChrom(v string)`
 
-SetClinicalSignificance sets ClinicalSignificance field to given value.
+SetChrom sets Chrom field to given value.
 
-### HasClinicalSignificance
+### HasChrom
 
-`func (o *Clinvar) HasClinicalSignificance() bool`
+`func (o *ClinVar) HasChrom() bool`
 
-HasClinicalSignificance returns a boolean if a field has been set.
+HasChrom returns a boolean if a field has been set.
 
-### GetClinvarId
+### GetCytogenic
 
-`func (o *Clinvar) GetClinvarId() int32`
+`func (o *ClinVar) GetCytogenic() string`
 
-GetClinvarId returns the ClinvarId field if non-nil, zero value otherwise.
+GetCytogenic returns the Cytogenic field if non-nil, zero value otherwise.
 
-### GetClinvarIdOk
+### GetCytogenicOk
 
-`func (o *Clinvar) GetClinvarIdOk() (*int32, bool)`
+`func (o *ClinVar) GetCytogenicOk() (*string, bool)`
 
-GetClinvarIdOk returns a tuple with the ClinvarId field if it's non-nil, zero value otherwise
+GetCytogenicOk returns a tuple with the Cytogenic field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetClinvarId
+### SetCytogenic
 
-`func (o *Clinvar) SetClinvarId(v int32)`
+`func (o *ClinVar) SetCytogenic(v string)`
 
-SetClinvarId sets ClinvarId field to given value.
+SetCytogenic sets Cytogenic field to given value.
 
-### HasClinvarId
+### HasCytogenic
 
-`func (o *Clinvar) HasClinvarId() bool`
+`func (o *ClinVar) HasCytogenic() bool`
 
-HasClinvarId returns a boolean if a field has been set.
+HasCytogenic returns a boolean if a field has been set.
 
-### GetConflictingClinicalSignificance
+### GetGene
 
-`func (o *Clinvar) GetConflictingClinicalSignificance() string`
+`func (o *ClinVar) GetGene() Gene`
 
-GetConflictingClinicalSignificance returns the ConflictingClinicalSignificance field if non-nil, zero value otherwise.
+GetGene returns the Gene field if non-nil, zero value otherwise.
 
-### GetConflictingClinicalSignificanceOk
+### GetGeneOk
 
-`func (o *Clinvar) GetConflictingClinicalSignificanceOk() (*string, bool)`
+`func (o *ClinVar) GetGeneOk() (*Gene, bool)`
 
-GetConflictingClinicalSignificanceOk returns a tuple with the ConflictingClinicalSignificance field if it's non-nil, zero value otherwise
+GetGeneOk returns a tuple with the Gene field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetConflictingClinicalSignificance
+### SetGene
 
-`func (o *Clinvar) SetConflictingClinicalSignificance(v string)`
+`func (o *ClinVar) SetGene(v Gene)`
 
-SetConflictingClinicalSignificance sets ConflictingClinicalSignificance field to given value.
+SetGene sets Gene field to given value.
 
-### HasConflictingClinicalSignificance
+### HasGene
 
-`func (o *Clinvar) HasConflictingClinicalSignificance() bool`
+`func (o *ClinVar) HasGene() bool`
 
-HasConflictingClinicalSignificance returns a boolean if a field has been set.
+HasGene returns a boolean if a field has been set.
 
-### GetEndPosition
+### GetHg19
 
-`func (o *Clinvar) GetEndPosition() int32`
+`func (o *ClinVar) GetHg19() Hg19`
 
-GetEndPosition returns the EndPosition field if non-nil, zero value otherwise.
+GetHg19 returns the Hg19 field if non-nil, zero value otherwise.
 
-### GetEndPositionOk
+### GetHg19Ok
 
-`func (o *Clinvar) GetEndPositionOk() (*int32, bool)`
+`func (o *ClinVar) GetHg19Ok() (*Hg19, bool)`
 
-GetEndPositionOk returns a tuple with the EndPosition field if it's non-nil, zero value otherwise
+GetHg19Ok returns a tuple with the Hg19 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEndPosition
+### SetHg19
 
-`func (o *Clinvar) SetEndPosition(v int32)`
+`func (o *ClinVar) SetHg19(v Hg19)`
 
-SetEndPosition sets EndPosition field to given value.
+SetHg19 sets Hg19 field to given value.
 
-### HasEndPosition
+### HasHg19
 
-`func (o *Clinvar) HasEndPosition() bool`
+`func (o *ClinVar) HasHg19() bool`
 
-HasEndPosition returns a boolean if a field has been set.
+HasHg19 returns a boolean if a field has been set.
 
-### GetReferenceAllele
+### GetHg38
 
-`func (o *Clinvar) GetReferenceAllele() string`
+`func (o *ClinVar) GetHg38() Hg38`
 
-GetReferenceAllele returns the ReferenceAllele field if non-nil, zero value otherwise.
+GetHg38 returns the Hg38 field if non-nil, zero value otherwise.
 
-### GetReferenceAlleleOk
+### GetHg38Ok
 
-`func (o *Clinvar) GetReferenceAlleleOk() (*string, bool)`
+`func (o *ClinVar) GetHg38Ok() (*Hg38, bool)`
 
-GetReferenceAlleleOk returns a tuple with the ReferenceAllele field if it's non-nil, zero value otherwise
+GetHg38Ok returns a tuple with the Hg38 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetReferenceAllele
+### SetHg38
 
-`func (o *Clinvar) SetReferenceAllele(v string)`
+`func (o *ClinVar) SetHg38(v Hg38)`
 
-SetReferenceAllele sets ReferenceAllele field to given value.
+SetHg38 sets Hg38 field to given value.
 
-### HasReferenceAllele
+### HasHg38
 
-`func (o *Clinvar) HasReferenceAllele() bool`
+`func (o *ClinVar) HasHg38() bool`
 
-HasReferenceAllele returns a boolean if a field has been set.
+HasHg38 returns a boolean if a field has been set.
 
-### GetStartPosition
+### GetHgvs
 
-`func (o *Clinvar) GetStartPosition() int32`
+`func (o *ClinVar) GetHgvs() Hgvs`
 
-GetStartPosition returns the StartPosition field if non-nil, zero value otherwise.
+GetHgvs returns the Hgvs field if non-nil, zero value otherwise.
 
-### GetStartPositionOk
+### GetHgvsOk
 
-`func (o *Clinvar) GetStartPositionOk() (*int32, bool)`
+`func (o *ClinVar) GetHgvsOk() (*Hgvs, bool)`
 
-GetStartPositionOk returns a tuple with the StartPosition field if it's non-nil, zero value otherwise
+GetHgvsOk returns a tuple with the Hgvs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStartPosition
+### SetHgvs
 
-`func (o *Clinvar) SetStartPosition(v int32)`
+`func (o *ClinVar) SetHgvs(v Hgvs)`
 
-SetStartPosition sets StartPosition field to given value.
+SetHgvs sets Hgvs field to given value.
 
-### HasStartPosition
+### HasHgvs
 
-`func (o *Clinvar) HasStartPosition() bool`
+`func (o *ClinVar) HasHgvs() bool`
 
-HasStartPosition returns a boolean if a field has been set.
+HasHgvs returns a boolean if a field has been set.
+
+### GetLicense
+
+`func (o *ClinVar) GetLicense() string`
+
+GetLicense returns the License field if non-nil, zero value otherwise.
+
+### GetLicenseOk
+
+`func (o *ClinVar) GetLicenseOk() (*string, bool)`
+
+GetLicenseOk returns a tuple with the License field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLicense
+
+`func (o *ClinVar) SetLicense(v string)`
+
+SetLicense sets License field to given value.
+
+### HasLicense
+
+`func (o *ClinVar) HasLicense() bool`
+
+HasLicense returns a boolean if a field has been set.
+
+### GetRcv
+
+`func (o *ClinVar) GetRcv() []Rcv`
+
+GetRcv returns the Rcv field if non-nil, zero value otherwise.
+
+### GetRcvOk
+
+`func (o *ClinVar) GetRcvOk() (*[]Rcv, bool)`
+
+GetRcvOk returns a tuple with the Rcv field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRcv
+
+`func (o *ClinVar) SetRcv(v []Rcv)`
+
+SetRcv sets Rcv field to given value.
+
+### HasRcv
+
+`func (o *ClinVar) HasRcv() bool`
+
+HasRcv returns a boolean if a field has been set.
+
+### GetVariantId
+
+`func (o *ClinVar) GetVariantId() int32`
+
+GetVariantId returns the VariantId field if non-nil, zero value otherwise.
+
+### GetVariantIdOk
+
+`func (o *ClinVar) GetVariantIdOk() (*int32, bool)`
+
+GetVariantIdOk returns a tuple with the VariantId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVariantId
+
+`func (o *ClinVar) SetVariantId(v int32)`
+
+SetVariantId sets VariantId field to given value.
+
+### HasVariantId
+
+`func (o *ClinVar) HasVariantId() bool`
+
+HasVariantId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
