@@ -2,6 +2,73 @@ syntax = "proto3";
 import "google/protobuf/any.proto";
 option go_package = "github.com/averyniceday/go-mpath-proto/mpath-api";
 
+message MPathProxyMessage {
+    string sample_count = 1 [json_name = "sample_count"];
+    map<string, CompiledResult> compiled_results = 2 [json_name = "compiled_results"];
+}
+
+message CompiledResult {
+    repeated AnnotatedMutationRecord annotated_mutation_records = 1 [json_name = "annotated_mutation_records"];
+    MetaData meta_data = 4 [json_name = "meta-data"];
+    repeated CnvVariants cnv_variants = 2 [json_name = "cnv-variants"];
+    repeated CnvIntragenicVariants cnv_intragenic_variants = 6 [json_name = "cnv-intragenic-variants"];
+    repeated SvVariants sv_variants = 7 [json_name = "sv-variants"];
+    MPathSegData mpath_seg_data = 9 [json_name = "mpath-seg-data"];
+}
+
+message AnnotatedMutationRecord {
+    string hugo_symbol = 1;
+    string entrez_gene_id = 2;
+    string center = 3;
+    string ncbi_build = 4;
+    string chromosome = 5;
+    string start_position = 6;
+    string end_position = 7;
+    string strand = 8;
+    string variant_classification = 9;
+    string variant_type = 10;
+    string reference_allele = 11;
+    string tumor_seq_allele_1 = 12;
+    string tumor_seq_allele_2 = 13;
+    string db_snp_rs = 14;
+    string db_snp_val_status = 15;
+    string tumor_sample_barcode = 16;
+    string matched_norm_sample_barcode = 17;
+    string matched_norm_seq_allele_1 = 18;
+    string matched_norm_seq_allele_2 = 19;
+    string tumor_validation_allele_1 = 20;
+    string tumor_validation_allele_2 = 21;
+    string match_norm_validation_allele_1 = 22;
+    string match_norm_validation_allele_2 = 23;
+    string verification_status = 24;
+    string validation_status = 25;
+    string mutation_status = 26;
+    string sequencing_phase = 27;
+    string sequencing_source = 28;
+    string validation_method = 29;
+    string score= 30;
+    string bam_file = 31;
+    string sequencer = 32;
+    string tumor_sample_uuid = 33;
+    string matched_norm_sample_uuid = 34;
+    string t_ref_count = 35;
+    string t_alt_count = 36;
+    string n_ref_count = 37;
+    string n_alt_count = 38;
+    string hgvsc = 39;
+    string hgvsp = 40;
+    string hgvsp_short = 41;
+    string transcript_id = 42;
+    string ref_seq = 43;
+    string protein_pos_start = 44;
+    string protein_pos_end = 45;
+    string codon_change = 46;
+    string hotspot = 47;
+    string consequence = 48;
+    string protein_position = 49;
+    string exon = 50;
+}
+
 message MPathSegData {
     string alys2samples_id = 1;
     string disclaimer = 2;
@@ -32,7 +99,7 @@ message Result {
     repeated CnvIntragenicVariants cnv_intragenic_variants = 6 [json_name = "cnv-intragenic-variants"];
     repeated SvVariants sv_variants = 7 [json_name = "sv-variants"];
     repeated Snp snp_indel_exonic_np = 8 [json_name = "snp-indel-exonic-np"];
-    MPathSegData mpath_seg_data = 9 [json_name = "mpath-seg-data"]; 
+    MPathSegData mpath_seg_data = 9 [json_name = "mpath-seg-data"];
 }
 
 message Snp {
