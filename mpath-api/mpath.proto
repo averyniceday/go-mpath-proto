@@ -2,6 +2,13 @@ syntax = "proto3";
 import "google/protobuf/any.proto";
 option go_package = "github.com/averyniceday/go-mpath-proto/mpath-api";
 
+message UnstructuredValue {
+   oneof kind {
+	string string_value = 1;
+	double number_value = 2;
+   }
+}
+
 message MPathProxyMessage {
     string sample_count = 1 [json_name = "sample_count"];
     map<string, CompiledResult> compiled_results = 2 [json_name = "compiled_results"];
@@ -212,8 +219,8 @@ message MetaData {
     string  mrev_comments = 20;
     string  mrev_status_name = 21;
     string  msi_comment = 22 [json_name = "msi-comment"];
-    string  msi_score = 23 [json_name = "msi-score"];
-    string  msi_type = 24 [json_name = "msi-type"];
+    UnstructuredValue  msi_score = 23 [json_name = "msi-score"];
+    UnstructuredValue  msi_type = 24 [json_name = "msi-type"];
     string  outside_institute = 25;
     string  primary_site = 26;
     uint32  retrieve_status = 27;
