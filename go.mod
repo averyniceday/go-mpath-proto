@@ -1,4 +1,4 @@
-module github.com/callachennault/go-mpath-proto
+module github.com/averyniceday/go-mpath-proto
 
 go 1.18
 
