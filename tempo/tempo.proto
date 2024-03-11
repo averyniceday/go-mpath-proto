@@ -1,5 +1,7 @@
 syntax = "proto3";
+
 package cbiomodels;
+option go_package = "./cbiomodels";
 
 message Event {
   string chromosome = 1;
