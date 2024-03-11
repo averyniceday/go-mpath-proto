@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package cbiomodels;
-option go_package = "./cbiomodels";
+option go_package = "github.com/averyniceday/go-mpath-proto/tempo";
 
 message Event {
   string chromosome = 1;
